@@ -8,7 +8,7 @@ export const Container = styled.nav`
 
   > a {
     width: 100%;
-    height: 66px;
+    height: 60px;
     background: #8691dd;
     display: flex;
     align-items: center;
@@ -17,7 +17,7 @@ export const Container = styled.nav`
 
   ul {
     a {
-      height: 70px;
+      height: 80px;
       display: flex;
       align-items: center;
       justify-content: center;
