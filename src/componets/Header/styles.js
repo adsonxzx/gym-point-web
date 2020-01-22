@@ -28,6 +28,7 @@ export const Content = styled.div`
       height: 25px;
 
       a {
+        font-weight: 600;
         text-transform: uppercase;
         color: #999999;
         padding: 10px;

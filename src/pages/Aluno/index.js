@@ -1,14 +1,22 @@
 import React from 'react';
-import Header from '../../componets/Header';
+import { ContentFull, TitlePage } from '../../styles/global';
 
 import { Container } from './styles';
 
 export default function Aluno() {
   return (
     <>
-      <Header />
       <Container>
-        <h1>opa</h1>
+        <ContentFull>
+          <header>
+            <TitlePage>Gerenciando Alunos</TitlePage>
+          </header>
+
+          <div>
+            <button type="button">Cadastrar</button>
+            <input type="text" name="search" placeholder="Buscar aluno" />
+          </div>
+        </ContentFull>
       </Container>
     </>
   );
