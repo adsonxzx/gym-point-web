@@ -39,17 +39,16 @@ export default createGlobalStyle`
 
 export const ContentFull = styled.div`
   width: 100%;
-  max-width: 1100px;
+  max-width: 1150px;
   margin: 0 auto;
   padding: 50px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 `;
 
 export const TitlePage = styled.h2`
+  font-size: 26px;
   font-weight: 500;
-  color: #444444;
+  color: #696a80;
+  margin-bottom: 40px;
 `;
 
 export const Container = styled.div`

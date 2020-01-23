@@ -1,26 +1,57 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  button {
-    height: 36px;
-    width: 142px;
-    background: #ee4d64;
-    color: #fff;
-    font-weight: 600;
-    text-transform: uppercase;
+  width: 100%;
+`;
 
-    transition: background 0.2s;
+export const Info = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 70px;
 
-    &:hover {
-      background: #de4359;
+  div {
+    & + div {
+      padding-left: 60px;
+      margin-left: 60px;
+      border-left: 1px solid #ddd;
+    }
+
+    span {
+      display: block;
+      color: #777777;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    strong {
+      font-weight: 700;
+      color: #5f8ce3;
+      font-size: 28px;
+    }
+  }
+`;
+
+export const Filter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  div {
+    svg {
+      cursor: pointer;
+      margin-right: 15px;
     }
   }
 
-  input {
-    margin-left: 15px;
-    height: 10px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    padding: 20px;
+  button {
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px dotted #696a80;
+    cursor: pointer;
   }
 `;
