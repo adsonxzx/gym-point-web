@@ -5,6 +5,7 @@ export const Container = styled.nav`
   height: 100%;
   background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
 
   > a {
     width: 100%;

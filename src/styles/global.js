@@ -9,7 +9,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  html, body, #root {
+  html, body {
     height: 100%;
   }
 
@@ -37,11 +37,11 @@ export default createGlobalStyle`
   }
 `;
 
-export const ContentFull = styled.div`
+export const Container = styled.main`
   width: 100%;
-  max-width: 1150px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 50px 10px;
+  padding: 50px 10px 50px 115px;
 `;
 
 export const TitlePage = styled.h2`
@@ -49,13 +49,4 @@ export const TitlePage = styled.h2`
   font-weight: 500;
   color: #696a80;
   margin-bottom: 40px;
-`;
-
-export const Container = styled.div`
-  display: flex;
-  height: 100%;
-
-  > div {
-    flex: 1;
-  }
 `;

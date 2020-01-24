@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background: linear-gradient(90deg, #9aa8fc, #71b4f8);
+  margin-left: 115px;
 `;
 
 export const Content = styled.div`

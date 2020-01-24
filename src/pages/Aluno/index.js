@@ -1,41 +1,39 @@
 import React from 'react';
 import { MdAdd, MdViewStream, MdViewModule } from 'react-icons/md';
-import { ContentFull, TitlePage } from '../../styles/global';
+import { Container, TitlePage } from '../../styles/global';
 import Table from '../../componets/Table';
 
-import { Container, Info, Filter } from './styles';
+import { Info, Filter } from './styles';
 
 export default function Aluno() {
   return (
     <>
-      <ContentFull>
-        <Container>
-          <header>
-            <TitlePage>Gerenciando Alunos</TitlePage>
-          </header>
+      <Container>
+        <header>
+          <TitlePage>Gerenciando Alunos</TitlePage>
+        </header>
 
-          <Info>
-            <div>
-              <span>Total Alunos</span>
-              <strong>1450</strong>
-            </div>
+        <Info>
+          <div>
+            <span>Total Alunos</span>
+            <strong>1450</strong>
+          </div>
 
-            <div>
-              <span>Alunos Ativos</span>
-              <strong>950</strong>
-            </div>
+          <div>
+            <span>Alunos Ativos</span>
+            <strong>950</strong>
+          </div>
 
-            <div>
-              <span>Matrículas do Mês</span>
-              <strong>120</strong>
-            </div>
+          <div>
+            <span>Matrículas do Mês</span>
+            <strong>120</strong>
+          </div>
 
-            <div>
-              <span>Matrículas do MêS</span>
-              <strong>120</strong>
-            </div>
-          </Info>
-        </Container>
+          <div>
+            <span>Matrículas do MêS</span>
+            <strong>120</strong>
+          </div>
+        </Info>
 
         <Filter>
           <div>
@@ -49,7 +47,7 @@ export default function Aluno() {
         </Filter>
 
         <Table />
-      </ContentFull>
+      </Container>
     </>
   );
 }
