@@ -50,3 +50,23 @@ export const TitlePage = styled.h2`
   color: #696a80;
   margin-bottom: 40px;
 `;
+
+// Buttons
+export const ButtonCreate = styled.button`
+  background: #8691dd;
+  border-radius: 4px;
+  border: 0;
+  color: #fff;
+  padding: 10px 30px;
+  margin: 0 15px;
+  font-weight: 500;
+`;
+
+export const ButtonCancel = styled.button`
+  background: #cbced6;
+  border-radius: 4px;
+  border: 0;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0 15px;
+`;

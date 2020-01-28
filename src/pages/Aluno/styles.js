@@ -51,3 +51,55 @@ export const Filter = styled.div`
     cursor: pointer;
   }
 `;
+
+export const FormBox = styled.form`
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+
+  > h2 {
+    font-weight: 500;
+    color: #696a80;
+    margin-bottom: 15px;
+  }
+
+  form {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 7px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > div {
+      flex-basis: 100%;
+
+      &.col-3 {
+        flex-basis: 32%;
+      }
+
+      &:last-child {
+        margin-top: 30px;
+        text-align: center;
+      }
+    }
+
+    label {
+      color: #777777;
+      width: 100%;
+      display: block;
+      margin-bottom: 7px;
+      font-size: 16px;
+    }
+
+    input {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #dddddd;
+    }
+  }
+`;
