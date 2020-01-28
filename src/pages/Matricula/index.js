@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import {
   Container,
   Info,
+  FormBox,
   ButtonCreate,
   ButtonCancel,
-  FormBox,
 } from '../../styles/global';
-import Table from '../../componets/Table';
 import Filter from '../../componets/Filter';
+import Table from '../../componets/Table';
 
-export default function Aluno() {
+export default function Matricula() {
   const [showForm, setShowForm] = useState(false);
 
   function handleShowForm() {
@@ -18,7 +18,7 @@ export default function Aluno() {
 
   return (
     <Container>
-      <h2>Gerenciando Alunos</h2>
+      <h2>Gerenciamento de Matrículas</h2>
 
       <Info>
         <div>

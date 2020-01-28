@@ -25,19 +25,19 @@ export default function Sidebar() {
           </Link>
         </li>
         <li>
-          <Link to="/alunos" className="active">
+          <Link to="/planos" className="active">
             <MdConfirmationNumber size={22} color="#CBCED6" />
             Planos
           </Link>
         </li>
         <li>
-          <Link to="/alunos">
+          <Link to="/matriculas">
             <MdPortrait size={22} color="#CBCED6" />
             Matriculas
           </Link>
         </li>
         <li>
-          <Link to="/alunos">
+          <Link to="/auxilios">
             <MdAssignment size={22} color="#CBCED6" />
             Auxílio
           </Link>
