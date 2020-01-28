@@ -68,6 +68,24 @@ export default function Plono() {
             <button type="button">Apagar</button>
           </div>
         </li>
+
+        <li>
+          <span>620 Alunos</span>
+
+          <div>
+            <div>
+              <img src={diamond} alt="" />
+            </div>
+            <strong>Diamond</strong>
+            <span>R$ 89,00</span>
+            <p>6 Meses</p>
+          </div>
+
+          <div>
+            <button type="button">Editar</button>
+            <button type="button">Apagar</button>
+          </div>
+        </li>
       </Plans>
     </Container>
   );

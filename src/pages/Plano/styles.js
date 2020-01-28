@@ -13,6 +13,7 @@ export const Plans = styled.ul`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex-basis: 30%;
     position: relative;
+    margin-bottom: 5%;
 
     header {
       padding: 10px;
@@ -42,12 +43,12 @@ export const Plans = styled.ul`
       padding: 30px 0;
 
       > div {
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         background: #dce8e8;
         margin: 0 auto;
-        padding: 10px;
+        padding: 15px;
 
         img {
           width: 100%;
