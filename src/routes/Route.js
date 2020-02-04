@@ -2,14 +2,16 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import Sidebar from '../componets/Sidebar';
 import Header from '../componets/Header';
+import { getToken } from '../services/storage';
 
 export default function RouteWrapper({
   component: Component,
   isPrivate,
   ...rest
 }) {
-  const signed = false;
-
+  console.log('opa');
+  const signed = getToken();
+  console.log(!signed);
   if (!signed && isPrivate) {
     return <Redirect to="/" />;
   }

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Form as Formulario } from '@rocketseat/unform';
 
 export const Container = styled.div`
   background: #ee4d64;
@@ -8,7 +9,7 @@ export const Container = styled.div`
   height: 100%;
 `;
 
-export const Form = styled.form`
+export const Form = styled(Formulario)`
   max-width: 360px;
   width: 100%;
   background: #fff;
@@ -17,7 +18,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
 
-  img {
+  > img {
     margin-bottom: 36px;
   }
 
@@ -40,6 +41,9 @@ export const Form = styled.form`
   }
 
   button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #ee4d64;
     border-radius: 4px;
     color: #fff;
@@ -47,6 +51,10 @@ export const Form = styled.form`
     border: 0;
     font-weight: bold;
     transition: background 0.2s;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
 
     &:hover {
       background: #de4359;
