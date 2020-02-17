@@ -9,9 +9,8 @@ export default function RouteWrapper({
   isPrivate,
   ...rest
 }) {
-  console.log('opa');
   const signed = getToken();
-  console.log(!signed);
+
   if (!signed && isPrivate) {
     return <Redirect to="/" />;
   }

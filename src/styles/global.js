@@ -100,7 +100,7 @@ export const Info = styled.div`
   }
 `;
 
-export const FormBox = styled.form`
+export const FormBox = styled.div`
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
@@ -138,16 +138,23 @@ export const FormBox = styled.form`
       color: #777777;
       width: 100%;
       display: block;
+      margin-top: 15px;
       margin-bottom: 7px;
       font-size: 16px;
     }
 
     input {
       width: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 5px;
       padding: 10px;
       border-radius: 4px;
       border: 1px solid #dddddd;
+    }
+
+    span {
+      color: red;
+      margin-bottom: 15px;
+      display: block;
     }
   }
 `;

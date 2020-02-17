@@ -46,7 +46,7 @@ export default function Matricula() {
         <div>
           <Filter handleShowForm={handleShowForm} options />
 
-          <Table />
+          {/* <Table /> */}
         </div>
       ) : (
         <FormBox>
