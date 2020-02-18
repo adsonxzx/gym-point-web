@@ -32,13 +32,21 @@ export default function Aluno() {
   const [formEdition, setFormEdition] = useState(false);
   const [pagination, setPagination] = useState(1);
   const [numPagination, setNumPagination] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  async function loadStudents() {
+    setLoading(true);
+    const response = await api.get(`students/?page=${pagination}`);
+    setStudentsPage(response.data);
+    setLoading(false);
+  }
 
   useEffect(() => {
     async function getList() {
       const response = await api.get(`students`);
       setStudents(response.data);
 
-      const totalPages = Math.ceil(response.data.length / 10);
+      const totalPages = Math.ceil(response.data.length / 9);
       const numPages = [];
       for (let i = 1; i <= totalPages; i += 1) {
         numPages.push(i);
@@ -51,12 +59,7 @@ export default function Aluno() {
   }, []);
 
   useEffect(() => {
-    async function getList() {
-      const response = await api.get(`students/?page=${pagination}`);
-      setStudentsPage(response.data);
-    }
-
-    getList();
+    loadStudents();
   }, [pagination]);
 
   function handleShowForm() {
@@ -66,29 +69,29 @@ export default function Aluno() {
   async function handleSubmit(data) {
     try {
       if (formEdition) {
-        const response = await api.put(`/students/${initialData.id}`, data);
-        setStudents([...students, response.data]);
+        await api.put(`/students/${initialData.id}`, data);
+        loadStudents();
         setShowForm(false);
-        toast.success('Cadastro realizado com sucesso!');
+        toast.success('Estudante atualizado com sucesso!');
       } else {
-        const response = await api.post('/students', data);
-        setStudents([...students, response.data]);
+        await api.post('/students', data);
+        loadStudents();
         setShowForm(false);
         toast.success('Cadastro realizado com sucesso!');
       }
     } catch (error) {
-      toast.error('Error ao cadastrar');
+      toast.error('Error ao cadastrar/atualizar');
     }
   }
 
   async function handleEditForm(studentId) {
-    setShowForm(true);
+    setFormEdition(true);
 
     const response = await api.get(`/students/${studentId}`);
     const { id, nome, email, peso, altura, idade } = response.data;
 
     setInitialData({ id, nome, email, peso, altura, idade });
-    setFormEdition(true);
+    setShowForm(true);
   }
 
   function prevPage() {
@@ -109,6 +112,16 @@ export default function Aluno() {
     }
   }
 
+  async function removeStudent(id) {
+    try {
+      await api.delete(`students/${id}`);
+      toast.success('Estudante removido com sucesso!');
+      loadStudents();
+    } catch (error) {
+      toast.error('Erro ao remover estudante!');
+    }
+  }
+
   return (
     <Container>
       <h2>Gerenciando Alunos</h2>
@@ -121,17 +134,12 @@ export default function Aluno() {
 
         <div>
           <span>Alunos Ativos</span>
-          <strong>950</strong>
+          <strong>10</strong>
         </div>
 
         <div>
-          <span>Matrículas do Mês</span>
-          <strong>120</strong>
-        </div>
-
-        <div>
-          <span>Matrículas do MêS</span>
-          <strong>120</strong>
+          <span>Cadastrado no Mês</span>
+          <strong>30</strong>
         </div>
       </Info>
 
@@ -139,7 +147,12 @@ export default function Aluno() {
         <div>
           <Filter handleShowForm={handleShowForm} options />
 
-          <Table list={studentsPage} handleEditForm={handleEditForm} />
+          <Table
+            loading={loading}
+            list={studentsPage}
+            handleEditForm={handleEditForm}
+            removeStudent={removeStudent}
+          />
 
           {/* Pagination */}
           <Pagination
@@ -152,7 +165,7 @@ export default function Aluno() {
         </div>
       ) : (
         <FormBox>
-          <h2>Cadastro de Aluno</h2>
+          <h2>{formEdition ? 'Alterar Estudante' : 'Cadastrar Estudante'}</h2>
           <Form
             schema={schema}
             onSubmit={handleSubmit}

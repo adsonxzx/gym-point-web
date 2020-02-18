@@ -6,7 +6,7 @@ import api from '../../services/api';
 import history from '../../services/history';
 import { Container, Form } from './styles';
 import logo from '../../assets/images/logo.svg';
-import Loading from '../../componets/Loading';
+import { Loading } from '../../componets/Loading';
 import { setToken } from '../../services/storage';
 
 export default function SignIn() {

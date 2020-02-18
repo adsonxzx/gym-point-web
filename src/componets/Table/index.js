@@ -1,9 +1,19 @@
 import React from 'react';
 import { MdModeEdit, MdClear } from 'react-icons/md';
+import { LoadingTable } from '../Loading';
 
 import { Container, Delete, Edit, Status } from './styles';
 
-export default function Table({ list, handleEditForm }) {
+export default function Table({
+  list,
+  handleEditForm,
+  loading,
+  removeStudent,
+}) {
+  if (loading) {
+    return <LoadingTable />;
+  }
+
   return (
     <Container>
       <table>
@@ -13,7 +23,6 @@ export default function Table({ list, handleEditForm }) {
             <th>Nome</th>
             <th>E-mail</th>
             <th>Idade</th>
-            <th>Status</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -24,19 +33,16 @@ export default function Table({ list, handleEditForm }) {
               <td>{item.nome}</td>
               <td>{item.email}</td>
               <td>{item.idade}</td>
-              <td>
+              {/* <td>
                 <Status>?</Status>
-              </td>
+              </td> */}
               <td>
                 <div>
-                  <Delete>
+                  <Delete onClick={() => removeStudent(item.id)}>
                     <MdClear color="#D37869" />
                   </Delete>
-                  <Edit>
-                    <MdModeEdit
-                      color="#69BAB1"
-                      onClick={() => handleEditForm(item.id)}
-                    />
+                  <Edit onClick={() => handleEditForm(item.id)}>
+                    <MdModeEdit color="#69BAB1" />
                   </Edit>
                 </div>
               </td>
